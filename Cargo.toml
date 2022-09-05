@@ -1,7 +1,12 @@
 [package]
-name = "hex"
+name = "gh-hex"
 version = "0.0.0"
 edition = "2021"
+description="A project to create more functional versions of existing hex tools"
+homepage="https://github.com/sohomdatta1/hex"
+repository="https://github.com/sohomdatta1/hex"
+license="MIT"
+readme="./README.md"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
