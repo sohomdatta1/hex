@@ -8,6 +8,7 @@ mod envman;
 mod hexdump;
 mod print_error;
 mod strings;
+mod search;
 
 static ERROR_EXIT_CODE: i32 = -1;
 static PROG_NAME: &str = "hex";
@@ -53,7 +54,7 @@ fn main() {
         }
         "dump" => {
             if args.len() < 3 {
-                println!("Usage: {} dump <filename>", PROG_NAME);
+                println!("Usage: {} dump <filename> <search_sequence>", PROG_NAME);
                 process::exit(ERROR_EXIT_CODE);
             }
 
@@ -68,6 +69,33 @@ fn main() {
             pager.setup();
 
             match hexdump::main_hexdump(&args[2], should_have_color_support) {
+                Ok(_) => {}
+                Err(e) => {
+                    println!("Error: {}", e);
+                    process::exit(ERROR_EXIT_CODE);
+                }
+            }
+        }
+        "search" => {
+            if args.len() < 5 {
+                println!("Usage {} search <filename> <--binary|--str|--hex> <searchterm>", PROG_NAME);
+                process::exit(ERROR_EXIT_CODE);
+            }
+
+            let should_have_color_support = chrome::should_have_color_support();
+
+            let mut pager = Pager::with_pager("less -R");
+            pager.setup();
+
+            let str_as_bytes;
+            if args[3].eq( "--str" ) {
+                str_as_bytes = args[4].clone().into_bytes()
+            } else {
+                println!("Unimplemented");
+                process::exit(ERROR_EXIT_CODE);
+            }
+
+            match search::main_search(&args[2], &str_as_bytes, should_have_color_support) {
                 Ok(_) => {}
                 Err(e) => {
                     println!("Error: {}", e);

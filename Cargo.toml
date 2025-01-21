@@ -1,5 +1,5 @@
 [package]
-name = "gh-hex"
+name = "hex"
 version = "0.0.0"
 edition = "2021"
 description="A project to create more functional versions of existing hex tools"
@@ -11,8 +11,8 @@ readme="./README.md"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-termion = "1.5.6"
-pager = "0.16.0"
+termion = "4.0.3"
+pager = "0.16.1"
 rand = "0.8.4"
 
 [profile.dev]

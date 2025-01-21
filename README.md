@@ -16,15 +16,6 @@ cd hex
 ./script/normal-build.sh
 ```
 
-For use with github-cli, run the following commands:
-
-```bash
-git clone https://github.com/sohomdatta1/hex.git
-cd hex
-./script/build.sh
-gh extension install .
-```
-
 ## Operations
 
 Currently, the following operations are supported:
@@ -36,4 +27,4 @@ If a pager is not desired, the `NOPAGER` env variable can be set. If colored out
 
 ## Language
 
-The project is written in Rust, mainly as a way for me to learn the language. I feel like implementing common tools such as these will be a nice way to get familiar with the basics.
+The project is written in Rust, mainly as a way for me to learn the language. I feel like implementing common binary processing tools such as these will be a nice way to get familiar with the basics.
