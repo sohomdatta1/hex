@@ -4,8 +4,6 @@
 
 A project to create alternate (and more user friendly) versions of existing hex tools.
 
-The project can be installed as a extension to the github-cli.
-
 ## Installation
 
 To install as a standalone binary, run the following commands:
@@ -13,7 +11,7 @@ To install as a standalone binary, run the following commands:
 ```bash
 git clone https://github.com/sohomdatta1/hex.git
 cd hex
-./script/normal-build.sh
+./script/build.sh
 ```
 
 ## Operations
